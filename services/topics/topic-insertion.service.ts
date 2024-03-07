@@ -4,7 +4,7 @@ import { TopicDto } from '@src/topics/dto/topic.dto';
 import { TopicRepository } from '@src/topics/repositories/topic.repository';
 import { getRandomString } from '@src/common/utils/string.util';
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export class TopicInsertionService extends AbstractTopicService {
     private req: TopicDto;
     public constructor(private readonly topicRepository: TopicRepository) {
